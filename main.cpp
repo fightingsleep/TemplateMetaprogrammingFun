@@ -1,5 +1,5 @@
-#include "factorial.h"
-#include "vectorduplicateremover.h"
+#include "factorial.hpp"
+#include "vectorduplicateremover.hpp"
 #include <iostream>
 
 int main()
@@ -20,4 +20,10 @@ int main()
 	static_assert(factorial<0>::value == 1);
 
 	std::cout << factorial<10>::value << std::endl;
+	VectorDuplicateRemover<Vector<1, 2, 2, 2, 3, 4, 4, 1, 5>>::type vec;
+
+	for (auto const &el : vec.GetDeduplicatedVector())
+	{
+		std::cout << el << std::endl;
+	}
 }

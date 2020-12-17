@@ -4,10 +4,10 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="factorial.h">
+    <ClCompile Include="vectorduplicateremover.hpp">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="vectorduplicateremover.h">
+    <ClCompile Include="factorial.hpp">
       <Filter>Header Files</Filter>
     </ClCompile>
   </ItemGroup>

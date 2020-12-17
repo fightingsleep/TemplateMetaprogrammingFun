@@ -142,9 +142,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="factorial.h" />
+    <ClCompile Include="factorial.hpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="vectorduplicateremover.h" />
+    <ClCompile Include="vectorduplicateremover.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

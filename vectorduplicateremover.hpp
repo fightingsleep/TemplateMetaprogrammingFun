@@ -1,10 +1,7 @@
 #ifndef VECTOR_DUPLICATE_REMOVER_HPP
 #define VECTOR_DUPLICATE_REMOVER_HPP
 
-#include <type_traits>
-#include <memory>
 #include <vector>
-#include <iostream>
 
 // PRIMARY TEMPLATES
 template <int... I>

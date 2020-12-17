@@ -1,12 +1,11 @@
 #include "factorial.hpp"
 #include "vectorduplicateremover.hpp"
+#include <type_traits>
 #include <iostream>
 
 int main()
 {
-	static_assert(std::is_same<VectorDuplicateRemover<Vector<1, 2, 2, 2, 3, 4, 4>>::type, Vector<1, 2, 3, 4>>::value);
-	static_assert(std::is_same<VectorDuplicateRemover<Vector<1, 2, 2, 2, 3, 4, 4, 1, 5>>::type, Vector<1, 2, 3, 4, 1, 5>>::value);
-
+	// Test out the basic factorial meta-program from wikipedia
 	static_assert(factorial<10>::value == 3628800);
 	static_assert(factorial<9>::value == 362880);
 	static_assert(factorial<8>::value == 40320);
@@ -19,9 +18,16 @@ int main()
 	static_assert(factorial<1>::value == 1);
 	static_assert(factorial<0>::value == 1);
 
-	std::cout << factorial<10>::value << std::endl;
+	// Print the factorial of 10 to the console
+	std::cout << "Factorial of 10 is: " << factorial<10>::value << std::endl;
+
+	// Test out our own vector deduplicator
+	static_assert(std::is_same<VectorDuplicateRemover<Vector<1, 2, 2, 2, 3, 4, 4>>::type, Vector<1, 2, 3, 4>>::value);
+	static_assert(std::is_same<VectorDuplicateRemover<Vector<1, 2, 2, 2, 3, 4, 4, 1, 5>>::type, Vector<1, 2, 3, 4, 1, 5>>::value);
 	VectorDuplicateRemover<Vector<1, 2, 2, 2, 3, 4, 4, 1, 5>>::type vec;
 
+	// Print the deduplicated vector to console
+	std::cout << "The deduplicated vector is: " << std::endl;
 	for (auto const &el : vec.GetDeduplicatedVector())
 	{
 		std::cout << el << std::endl;

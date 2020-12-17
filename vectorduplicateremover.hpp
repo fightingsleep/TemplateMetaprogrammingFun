@@ -1,8 +1,18 @@
+#ifndef VECTOR_DUPLICATE_REMOVER_HPP
+#define VECTOR_DUPLICATE_REMOVER_HPP
+
 #include <type_traits>
+#include <memory>
+#include <vector>
+#include <iostream>
 
 // PRIMARY TEMPLATES
-template <int...>
-struct Vector;
+template <int... I>
+class Vector
+{
+public:
+    std::vector<int> GetDeduplicatedVector();
+};
 
 template<typename>
 struct VectorDuplicateRemover;
@@ -37,3 +47,13 @@ struct VectorBuilder<el, Vector<rest...>>
 {
     using type = Vector<el, rest...>; // Typedef
 };
+
+// This function definition must be included in the header file
+// because of the way that templates work.
+template <int... I>
+std::vector<int> Vector<I...>::GetDeduplicatedVector()
+{
+    return std::vector<int>{I...};
+}
+
+#endif // !VECTOR_DUPLICATE_REMOVER_HPP

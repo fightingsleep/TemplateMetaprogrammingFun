@@ -1,3 +1,6 @@
+#ifndef FACTORIAL_HPP
+#define FACTORIAL_HPP
+
 /*
 * This example is taken straight from wikipedia.
 * https://en.wikipedia.org/wiki/Template_metaprogramming
@@ -16,3 +19,5 @@ template <>
 struct factorial<0> {
 	enum { value = 1 };
 };
+
+#endif // !FACTORIAL_HPP

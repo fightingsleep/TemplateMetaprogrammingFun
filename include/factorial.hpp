@@ -11,13 +11,13 @@
 // RECURSIVE CASE
 template <unsigned int n>
 struct factorial {
-	enum { value = n * factorial<n - 1>::value };
+    enum { value = n * factorial<n - 1>::value };
 };
 
 // BASE CASE SPECIALIZATION
 template <>
 struct factorial<0> {
-	enum { value = 1 };
+    enum { value = 1 };
 };
 
 #endif // !FACTORIAL_HPP
